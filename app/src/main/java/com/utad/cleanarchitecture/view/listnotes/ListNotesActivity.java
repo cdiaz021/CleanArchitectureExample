@@ -3,6 +3,8 @@ package com.utad.cleanarchitecture.view.listnotes;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,17 +24,30 @@ public class ListNotesActivity extends AppCompatActivity implements ListNotesPre
     private ListView listView;
     private ArrayAdapter<String> arrayAdapter;
     private List<String> noteList;
+
     private ListNotesPresenter listNotesPresenter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_notes_activity);
+
+
         listView = (ListView) findViewById(R.id.listView);
+
         noteList = new ArrayList<>();
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,noteList);
+
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, noteList);
+
+
         listView.setAdapter(arrayAdapter);
+
+
+
         listNotesPresenter = new ListNotesPresenter(this);
         listNotesPresenter.attach(this);
+
+
     }
 
 
