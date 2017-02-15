@@ -31,25 +31,13 @@ public class ListNotesActivity extends AppCompatActivity implements ListNotesPre
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_notes_activity);
-
-
         listView = (ListView) findViewById(R.id.listView);
-
         noteList = new ArrayList<>();
-
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, noteList);
-
-
         listView.setAdapter(arrayAdapter);
-
-
-
         listNotesPresenter = new ListNotesPresenter(this);
         listNotesPresenter.attach(this);
-
-
     }
-
 
     @Override
     protected void onResume() {
