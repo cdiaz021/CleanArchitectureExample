@@ -18,7 +18,7 @@ public class AddNoteActivity extends AppCompatActivity implements AddNotePresent
 
 
     private AddNotePresenter addNotePresenter;
-    EditText editText
+    EditText editText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,7 @@ public class AddNoteActivity extends AppCompatActivity implements AddNotePresent
     @Override
     public void onSuccess() {
         Toast.makeText(this,"Inserción ok",Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override

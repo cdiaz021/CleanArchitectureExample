@@ -9,13 +9,15 @@
         android:supportsRtl="true"
         android:name=".MVPApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.add.AddNoteActivity">
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.add.AddNoteActivity"/>
+        <activity android:name=".view.listnotes.ListNotesActivity"/>
 
         <meta-data android:name="AA_DB_NAME" android:value="notes.db" />
         <meta-data android:name="AA_DB_VERSION" android:value="1" />
